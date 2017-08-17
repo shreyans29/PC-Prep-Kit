@@ -3,6 +3,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
 const moment = require('moment');
 const config = require('../config/settings');
 const _      = require('lodash');
+const bcrypt = require('bcrypt');
 const jwt    = require('jsonwebtoken');
 const authenticationHelpers = require('./authenticationHelpers');
 const utilityFunctions = require('./utilityfunctions');
@@ -12,7 +13,7 @@ const utilityFunctions = require('./utilityfunctions');
  * @param  {Object} user Create authentication token using user data
  */
 function createToken(user) {
-    return jwt.sign(_.omit(user, 'password'), config.secretKey, { expiresIn: 60*60*5 });
+    return jwt.sign(_.omit(user, 'password'), config.secretKey, { expiresIn: 60 * 60 * 5 });
 }
 
 const validateEmail = utilityFunctions.validateEmail;
@@ -124,7 +125,7 @@ module.exports = function(router, passport, async, nodemailer, crypto, models) {
                         if(!data) {
                             return res.status(200).json({info: 'This account does not exist or you cannot change the password for this account'});
                         }
-                        const date = moment(moment.now() + 60*60*1000).format('YYYY-MM-DD HH:mm:ss');
+                        const date = moment(moment.now() + 60 * 60 * 1000).format('YYYY-MM-DD HH:mm:ss');
                         localUser.update({
                             resetPasswordToken: token,
                             resetPasswordExpires: date
@@ -202,16 +203,21 @@ module.exports = function(router, passport, async, nodemailer, crypto, models) {
                             return res.status(200).json({info: 'Password reset token is invalid or has expired'});
                         }
                         const user = {email: data.email};
-                        localUser.update({
-                            resetPasswordToken: null,
-                            resetPasswordExpires: null,
-                            password: req.body.password
-                        }, {
-                            where: {
-                                resetPasswordToken: req.params.token,
-                                provider: 'local'
+                        bcrypt.hash(req.body.password, 10, function(err, hash) {
+                            if(err) {
+                                return res.status(500).json({error: 'Something went wrong'});
                             }
-                        })
+
+                            localUser.update({
+                                resetPasswordToken: null,
+                                resetPasswordExpires: null,
+                                password: hash
+                            }, {
+                                where: {
+                                    resetPasswordToken: req.params.token,
+                                    provider: 'local'
+                                }
+                            })
                             .then(data => {
                                 if(!data) {
                                     return res.status(500).json({error: 'Something went wrong'});
@@ -223,8 +229,7 @@ module.exports = function(router, passport, async, nodemailer, crypto, models) {
                             }).catch(function(err) {
                                 return res.status(500).json({error: 'Something went wrong'});
                             });
-                    }).catch(function(err) {
-                        return res.status(500).json({error: 'Something went wrong'});
+                        });
                     });
             }
         ],
