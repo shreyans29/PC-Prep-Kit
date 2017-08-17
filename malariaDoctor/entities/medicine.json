@@ -1,0 +1,33 @@
+{
+  "id": "6a981b65-4b78-478f-ab02-fc023f66c2d8",
+  "name": "medicine",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "mefloquine",
+      "synonyms": [
+        "mefloquine"
+      ]
+    },
+    {
+      "value": "malarone",
+      "synonyms": [
+        "malarone"
+      ]
+    },
+    {
+      "value": "doycycline",
+      "synonyms": [
+        "doycycline"
+      ]
+    },
+    {
+      "value": "doxycycline",
+      "synonyms": [
+        "doxycycline"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

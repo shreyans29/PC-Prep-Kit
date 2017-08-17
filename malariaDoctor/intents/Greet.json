@@ -1,0 +1,87 @@
+{
+  "userSays": [
+    {
+      "id": "55c796a5-d661-48c3-a5b9-71a545c05404",
+      "data": [
+        {
+          "text": "Hello doctor"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "167a945a-c643-4719-9d38-ad9c446eee16",
+      "data": [
+        {
+          "text": "Hi doctor"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "69bf2a01-a5f4-4789-9231-87907ba45371",
+      "data": [
+        {
+          "text": "Hey"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dacfa964-e657-4437-a837-3eb47c8de022",
+      "data": [
+        {
+          "text": "Hello"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "bf44a585-6567-4776-87b2-ba632c1db4bb",
+      "data": [
+        {
+          "text": "Hi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "261f05a1-e86e-4302-af88-7e879650a4cf",
+  "name": "Greet",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "Greet-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Hello, What is your name?",
+            "Hi, What is your name?",
+            "Hi, How are you doing ? What is your name?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

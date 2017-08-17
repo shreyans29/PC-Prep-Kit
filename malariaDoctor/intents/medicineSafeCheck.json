@@ -1,0 +1,101 @@
+{
+  "userSays": [
+    {
+      "id": "9bcd1767-7cd8-4ad9-94e6-4a51c6990aec",
+      "data": [
+        {
+          "text": "can i use "
+        },
+        {
+          "text": "doxycycline",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": false
+        },
+        {
+          "text": " for treatment of malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "11ef7926-9af6-4b97-8f8f-bda6262b9607",
+      "data": [
+        {
+          "text": "Is it safe to use "
+        },
+        {
+          "text": "malarone",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": false
+        },
+        {
+          "text": " for malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "16e59f0e-875b-48f8-b275-e9942c967915",
+      "data": [
+        {
+          "text": "Should I take  "
+        },
+        {
+          "text": "mefloquine",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": false
+        },
+        {
+          "text": " ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "d7e6467f-b2d7-40de-9aaa-a9b6d27b005d",
+  "name": "medicineSafeCheck",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "medicineSafeCheck-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@medicine",
+          "name": "medicine",
+          "value": "$medicine",
+          "prompts": [
+            "Can you help me with the name of the medicine ?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "How old are you ?  Are you a Male or female ?"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

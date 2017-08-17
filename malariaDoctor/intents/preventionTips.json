@@ -1,0 +1,62 @@
+{
+  "userSays": [
+    {
+      "id": "969288a2-c903-4f02-8675-276abb8921c9",
+      "data": [
+        {
+          "text": "how can I prevent malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "62be90c3-21b9-439d-81c7-b934f40dc5ce",
+      "data": [
+        {
+          "text": "what are some ways to prevent malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c66ec274-32d8-45eb-a9ea-42630e45d393",
+      "data": [
+        {
+          "text": "can you help me with some malaria prevention tips ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "f157f005-6e9a-4098-bad2-fc4320dcff71",
+  "name": "preventionTips",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Using Mosquito repellent will be of a great help.",
+            "Wear long sleeve clothes.",
+            "You could check for any stagnant water.",
+            "Use mosquito nets"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

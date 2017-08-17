@@ -1,0 +1,11 @@
+<div class="chat-window col-md-4 col-xs-8">
+  <div class="chats" #chats>
+    <div [className]="chat.status" *ngFor="let chat of messages">
+      {{chat.message}}
+    </div>
+  </div>
+  <div class="send-message">
+    <input type="text" [(ngModel)]="chatMessage" (keyup.enter)=send(chatMessage)>
+    <button (click)=send(chatMessage)> Send </button>
+  </div>
+</div>

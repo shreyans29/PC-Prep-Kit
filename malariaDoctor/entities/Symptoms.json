@@ -1,0 +1,69 @@
+{
+  "id": "bc7744ac-7142-40d0-bf3f-f0d0de7103be",
+  "name": "Symptoms",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "chills",
+      "synonyms": [
+        "chills"
+      ]
+    },
+    {
+      "value": "fatigue",
+      "synonyms": [
+        "fatigue"
+      ]
+    },
+    {
+      "value": "fever",
+      "synonyms": [
+        "fever"
+      ]
+    },
+    {
+      "value": "malaise",
+      "synonyms": [
+        "malaise"
+      ]
+    },
+    {
+      "value": "shivering",
+      "synonyms": [
+        "shivering"
+      ]
+    },
+    {
+      "value": "sweating",
+      "synonyms": [
+        "sweating"
+      ]
+    },
+    {
+      "value": "fast heart rate",
+      "synonyms": [
+        "fast heart rate"
+      ]
+    },
+    {
+      "value": "headache",
+      "synonyms": [
+        "headache"
+      ]
+    },
+    {
+      "value": "nausea",
+      "synonyms": [
+        "nausea"
+      ]
+    },
+    {
+      "value": "pain in muscles",
+      "synonyms": [
+        "pain in muscles"
+      ]
+    }
+  ],
+  "isEnum": true,
+  "automatedExpansion": false
+}

@@ -1,0 +1,87 @@
+{
+  "userSays": [
+    {
+      "id": "42de662c-b5f8-4524-b7df-8c263453b4ca",
+      "data": [
+        {
+          "text": "medicines for malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "30166b2d-f959-48aa-b213-14d7d0c97b94",
+      "data": [
+        {
+          "text": "malaria treatment"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e500aefb-6c2d-4c02-a332-e4decc4fbbea",
+      "data": [
+        {
+          "text": "details about medicines for malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "cc27b213-4ad9-454d-bae7-0ed54c6d421b",
+      "data": [
+        {
+          "text": "What medicines are used for treatment of malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "a19514d3-4c78-4a84-b387-ad08f24bc303",
+      "data": [
+        {
+          "text": "which medicines are used to treat malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2012ecc4-5ed2-49dc-9e60-29701b3b0c7c",
+      "data": [
+        {
+          "text": "malaria medicine treatment"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "447ad97d-4110-4173-a0fb-ad375061f7f5",
+  "name": "Medicine",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "The medicines which are used to treat malaria are called antimalarials.  The medicine you take will depend on your location and your current health condition.  \n\nDrug Treatment is based on species of parasites you are infected with. If you are infected with P. falciparum, it can be life threatening. Infection caused by other species are rarely life threatening. \n\nThe popular medicines for malaria are Mefloquine, malarone , doxycycline."
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

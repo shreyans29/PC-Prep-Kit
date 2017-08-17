@@ -1,0 +1,98 @@
+{
+  "userSays": [
+    {
+      "id": "adb3e345-dd5e-49b9-be3e-9bc88072b394",
+      "data": [
+        {
+          "text": "i am a "
+        },
+        {
+          "text": "female",
+          "alias": "gender",
+          "meta": "@gender",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "15",
+          "alias": "age",
+          "meta": "@sys.age",
+          "userDefined": true
+        },
+        {
+          "text": " years old"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5c3396ce-d719-42a7-882a-02d52c43ea8c",
+      "data": [
+        {
+          "text": "I am "
+        },
+        {
+          "text": "28",
+          "alias": "age",
+          "meta": "@sys.age",
+          "userDefined": false
+        },
+        {
+          "text": " years old "
+        },
+        {
+          "text": "male",
+          "alias": "gender",
+          "meta": "@gender",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "6ea12261-f0f0-4da3-98bd-092d9b94c6e6",
+  "parentId": "d7e6467f-b2d7-40de-9aaa-a9b6d27b005d",
+  "rootParentId": "d7e6467f-b2d7-40de-9aaa-a9b6d27b005d",
+  "name": "medicineSafeCheckQuestion",
+  "auto": true,
+  "contexts": [
+    "medicineSafeCheck-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "medicineSafeCheck.medicineSafeCheck-custom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@sys.age",
+          "name": "age",
+          "value": "$age",
+          "isList": false
+        },
+        {
+          "dataType": "@gender",
+          "name": "gender",
+          "value": "$gender",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

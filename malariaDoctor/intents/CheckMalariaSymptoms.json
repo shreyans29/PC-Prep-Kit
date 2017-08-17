@@ -1,0 +1,211 @@
+{
+  "userSays": [
+    {
+      "id": "52c85087-0431-438b-a5e4-4074cbcceee0",
+      "data": [
+        {
+          "text": "i have "
+        },
+        {
+          "text": "fast heart rate",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "headache",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "fatigue",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6ba4a4ce-a334-4dbc-a84b-7932e05fdfd3",
+      "data": [
+        {
+          "text": "I have "
+        },
+        {
+          "text": "pain in muscles",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f8e3b881-50ee-4d53-9b79-1ed52e147c1b",
+      "data": [
+        {
+          "text": "I am experiencing "
+        },
+        {
+          "text": "chills",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "fatigue",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "fever",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "malaise",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "shivering",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "sweating",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1cd0742d-9621-4a50-954d-15b3c02c3e5d",
+      "data": [
+        {
+          "text": "I have "
+        },
+        {
+          "text": "chills",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "fatigue",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "fever",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "malaise",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "shivering",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "sweating",
+          "alias": "Symptoms",
+          "meta": "@Symptoms",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "ce4153ce-f907-4f73-9709-8a53d5703f43",
+  "parentId": "a2b9aaa6-d9b1-4a66-9009-e22c19934006",
+  "rootParentId": "a2b9aaa6-d9b1-4a66-9009-e22c19934006",
+  "name": "CheckMalariaSymptoms",
+  "auto": true,
+  "contexts": [
+    "CheckMalaria-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "CheckMalaria.CheckMalaria-custom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@Symptoms",
+          "name": "Symptoms",
+          "value": "$Symptoms",
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,82 @@
+{
+  "userSays": [
+    {
+      "id": "45461e76-a2ec-4dd9-b5d7-f9fe6961044c",
+      "data": [
+        {
+          "text": "side effects of "
+        },
+        {
+          "text": "doxycycline",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7b883812-88ef-4377-b7af-b63d3a236013",
+      "data": [
+        {
+          "text": "side effects of "
+        },
+        {
+          "text": "malarone",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "caef8d78-4265-4c0d-91e7-d5a1af0fe153",
+      "data": [
+        {
+          "text": "What are the side effects of "
+        },
+        {
+          "text": "mefloquine",
+          "alias": "medicine",
+          "meta": "@medicine",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "e2bb111b-d855-47a7-b7a1-12dcd62f4920",
+  "name": "medicineSideEffects",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@medicine",
+          "name": "medicine",
+          "value": "$medicine",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

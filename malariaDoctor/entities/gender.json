@@ -1,0 +1,27 @@
+{
+  "id": "79921613-af2f-4271-8862-a300391738c1",
+  "name": "gender",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "male",
+      "synonyms": [
+        "male"
+      ]
+    },
+    {
+      "value": "female",
+      "synonyms": [
+        "female"
+      ]
+    },
+    {
+      "value": "other",
+      "synonyms": [
+        "other"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

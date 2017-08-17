@@ -1,10 +1,12 @@
 const express = require('express');
 const jwt    = require('jsonwebtoken');
+const apiai = require('apiai');
 const config = require('../config/settings');
+const authenticationHelpers = require('./authenticationHelpers');
 const router = express.Router();
 const models = require('../database/models');
 const mail = require('./mailService');
-const authenticationHelpers = require('./authenticationHelpers');
+const doctor = require('./doctor');
 
 const localUser = models.user_account;
 const progress = models.progress;
@@ -162,7 +164,7 @@ router.patch('/updateProgressStatus', authenticationHelpers.isAuthOrRedirect, (r
                 const progressActivity = data.progress.activity;
                 const stageDiff = currStage - progressStage;
                 const activityDiff = currActivity - progressActivity;
-                if((currStage === progressStage || stageDiff === 1) && (activityDiff === 1)) {
+                if((currStage === progressStage && activityDiff === 1) || (stageDiff === 1 && progressActivity === 3)) {
                     progress.update({
                         stage: currStage,
                         activity: currActivity
@@ -174,10 +176,10 @@ router.patch('/updateProgressStatus', authenticationHelpers.isAuthOrRedirect, (r
                         .then(response => {
                             return res.status(200).json({info: 'success'});
                         })
-                } else if(stageDiff > 1 && activityDiff > 1) {
-                    return res.status(200).json({info: 'Illegal operation'});
                 } else if(stageDiff < 1 && activityDiff < 1) {
                     return res.status(200).json({info: 'success'});
+                } else {
+                    return res.status(200).json({info: 'Illegal operation'});
                 }
             })
             .catch(function(err) {
@@ -288,5 +290,49 @@ router.post('/uploadCam', function(req, res) {
     res.send(req.files);
 });
 
-module.exports = router;
+/**
+ * Return JSON file contents
+ * @param  {Object} '/getJSONData'  URI of the resource
+ * @param  {Function} (req, res)    Anonymous function to handle request and response
+ */
+router.get('/getJSONData', (req, res) => {
+    const uri = `./data/${req.query.file}`;
+    res.status(200).json({data: fs.readFileSync(uri, 'utf8')});
+});
 
+
+
+router.post('/doctorchat', (req, res) => {
+    const chatbot = apiai('2da698372070440e9ac9ac5c96917147');
+    let request = chatbot.textRequest(req.body.message, {
+        sessionId: req.sessionID
+    });
+
+    request.on('response', function(chatResponse) {
+
+        let result = chatResponse.result;
+        let reply = result.fulfillment.speech;
+
+
+        if (!reply){
+            doctor(chatResponse, function(reply){
+                res.json({reply: reply});
+            });
+        } else {
+            res.json({reply: reply});
+        }
+
+    });
+
+    request.on('error', function(error) {
+        if (error.status.code === 400) {
+            res.json({reply: 'I am sorry, I did not understand, try changing the sentence a little.'});
+        } else {
+            res.json({reply: 'There seems to be some problem with the chat.'});
+        }
+    });
+
+    request.end();
+});
+
+module.exports = router;

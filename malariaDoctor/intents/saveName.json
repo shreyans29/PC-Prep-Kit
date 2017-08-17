@@ -1,0 +1,203 @@
+{
+  "userSays": [
+    {
+      "id": "7b016acb-ac8a-4408-be8b-74818d85ab19",
+      "data": [
+        {
+          "text": "my name is "
+        },
+        {
+          "text": "shreyans",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        },
+        {
+          "text": " I am doing fine"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c7aa7aa2-83a6-41c3-8ad1-d0fb17dcada8",
+      "data": [
+        {
+          "text": "I am doing fine my name is "
+        },
+        {
+          "text": "shreyans",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0d39ad20-3932-415b-b628-2e6e4679c49e",
+      "data": [
+        {
+          "text": "I am "
+        },
+        {
+          "text": "Rajat",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "9ad49f1b-dfb2-42cd-aebd-576e6a324f1c",
+      "data": [
+        {
+          "text": "I am "
+        },
+        {
+          "text": "Shreyans",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ca8940b2-b6de-40e8-9b88-783c1a0cc20e",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Rhythm",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ca45faf6-2241-426c-9285-3e57a47e885a",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Visitha",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2d482cbc-0595-41bb-820d-f4ea52aa8cb0",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Buddhiprabha",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9ea1040d-31d3-481e-9ca0-cd056ba175f7",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Jennifer",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2c9aff0f-08fd-4a96-850a-81b20f5f6209",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Rajat",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3913cb0e-b1ad-4e52-b2c6-ba8322d27462",
+      "data": [
+        {
+          "text": "My name is "
+        },
+        {
+          "text": "Shreyans",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "3e2bdf92-0668-40ae-92c3-1fd6285ec634",
+  "name": "saveName",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "savename",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "name",
+          "value": "$name",
+          "prompts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Hi $name, how may I help you ?",
+            "Hi $name, what can I do for you ?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

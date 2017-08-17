@@ -1,0 +1,126 @@
+{
+  "userSays": [
+    {
+      "id": "a1cacb16-f35f-472f-857e-c40df0ae52f2",
+      "data": [
+        {
+          "text": "check malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e8083683-271f-452e-83a9-1f2a6d233c87",
+      "data": [
+        {
+          "text": "I wanted to check malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f8c09eb7-5fb6-4f65-9242-a8966a1b967f",
+      "data": [
+        {
+          "text": "I am having symptoms for malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "53217df3-e870-4631-9fbe-df0a09c6fe17",
+      "data": [
+        {
+          "text": "I am having symptoms related to malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dace7465-71f9-4728-9d22-7acea9d55e96",
+      "data": [
+        {
+          "text": "I am having malaria symptoms"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "50e2a49f-0de5-4c49-9f19-4a58c279d59c",
+      "data": [
+        {
+          "text": "I am scared I have malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5cad65cc-5138-468d-af50-55bc39e7ecb3",
+      "data": [
+        {
+          "text": "Do I have Malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a561b1bf-1fcb-4649-b4ec-74e2a7a17cfb",
+      "data": [
+        {
+          "text": "I am Having some symptoms, I want to check if its Malaria"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "441fc4a6-ec37-4039-8198-28185050b69e",
+      "data": [
+        {
+          "text": "Am I infected with Malaria ?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "a2b9aaa6-d9b1-4a66-9009-e22c19934006",
+  "name": "CheckMalaria",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "CheckMalaria-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Which of these symptoms do you have ? chills, fatigue, fever, malaise, shivering, sweating , Pain in the Muscles,  fast heart rate, headache and nausea.",
+            "Can you help me your symptoms? That will help me in determining if you have malaria. The common symptoms are chills, fatigue, fever, malaise, shivering, sweating , Pain in the Muscles,  fast heart rate, headache and nausea."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
