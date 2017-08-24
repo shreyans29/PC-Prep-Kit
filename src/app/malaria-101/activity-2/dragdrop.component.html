@@ -8,12 +8,12 @@
       <div class="content">
         <div class="row">
           <div class="col-xs-4 col-xs-offset-2">
-            <div dnd-droppable class="panel panel-primary" [allowDrop]="allowDropFunction(box1)" (onDropSuccess)="addTobox($event,box1)">
-              <div class="panel-heading panel-do">
+            <div dnd-droppable class="panel panel-success" [allowDrop]="allowDropFunction(box1)" (onDropSuccess)="addTobox($event,box1)">
+              <div class="panel-heading panel-available">
                 {{language?.descriptions.boxIndicatorDo}}
               </div>
               <div class="panel-body">
-                <div *ngFor="let item of do"><div class="panel-body">  {{item.description}} </div></div>
+                <div *ngFor="let item of do"><div class="panel panel-body panel-default">  {{item.description}} </div></div>
               </div>
             </div>
           </div>
@@ -23,15 +23,15 @@
                 {{language?.descriptions.boxIndicatorDont}}
               </div>
               <div class="panel-body">
-                <div *ngFor="let item of dont"><div class="panel-body">  {{item.description}} </div></div>
+                <div *ngFor="let item of dont"><div class="panel panel-body panel-default">  {{item.description}} </div></div>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-6 col-xs-offset-3">
-            <div class="panel panel-success">
-              <div class="panel-heading panel-available"> {{language?.descriptions.boxIndicatorAvailable}} </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading panel-do"> {{language?.descriptions.boxIndicatorAvailable}} </div>
               <div class="panel-body">
                 <div *ngFor="let item of dosAndDonts" class="panel panel-default col-xs-6" dnd-draggable [dragData]=item>
                   <div class="panel-body">  {{item.description}} </div>

@@ -41,6 +41,7 @@
 
 .infokit-components {
     padding: $padding-large;
+
 }
 
 .close-button {
@@ -50,4 +51,9 @@
 .infokit-icons {
     height: 90px;
     width: 90px;
+}
+
+.infokit-content{
+    font-weight: $regular;
+    font-size: 17px;
 }

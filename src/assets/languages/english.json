@@ -142,9 +142,9 @@
         },
         "pcpolicy": {
           "descriptions": {
-            "bodyContent1": "So this is Kinda important.",
+            "bodyContent1": "So this is kind of important.",
             "bodyContent2": "Lets make sure you have it on hand.",
-            "bodyContent3": "Email the official Peace Corps policy to Yourself.",
+            "bodyContent3": "Email the official Peace Corps policy to yourself.",
             "bodyContent4": "Email will be sent to"
           },
           "messages": {
@@ -169,7 +169,7 @@
           }
         },
         "dragdrop": {
-          "heading": "Drag and drop the dos and donts of Malaria",
+          "heading": "Drag and drop the dos and don'ts of Malaria",
           "descriptions": {
             "boxIndicatorDo": "Dos",
             "boxIndicatorDont": "Don'ts",
