@@ -27,7 +27,6 @@ export class InfokitComponent implements OnInit {
         {key: 'side_effects', value: false, def: 'Side Effects', img: 'sideeffects.png'},
         {key: 'doctor_info', value: false, def: 'Doctor Information', img: 'doctor.png'}
     ];
-  
     // Sets the Heading In Infokit Pop Up
     public heading = 'Info Kit';
     // Sets the Content In Infokit Pop Up
@@ -68,19 +67,20 @@ export class InfokitComponent implements OnInit {
      * Gets Infromation from the Infokit API
      */
     getData() {
-        if (localStorage.getItem(InfokitComponent._localStorageKey)) {
-            this._infokitService.infokitactive().subscribe(response => {
-                for (let info of this.infokitActive) {
-                    info.value = response.infokitactive[info.key];
-                }
+      if (localStorage.getItem(InfokitComponent._localStorageKey)) {
+          this._infokitService.infokitactive().subscribe(response => {
+              for (let info of this.infokitActive) {
+                  console.log(response);
+                  info.value = response.infokitactive[info.key];
+              }
 
-                for (let info of this.infokitActive) {
-                    if (info.value) {
-                        this.infokitAvailable = true;
-                        break;
-                    }
-                }
-            });
-        }
+              for (let info of this.infokitActive) {
+                  if (info.value) {
+                      this.infokitAvailable = true;
+                      break;
+                  }
+              }
+          });
+      }
     }
 }

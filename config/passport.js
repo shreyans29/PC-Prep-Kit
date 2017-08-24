@@ -1,7 +1,11 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 const configAuth = require('./settings');
+
+const fs = require('fs');
+
+const codes = JSON.parse(fs.readFileSync('./data/codes.json'));
+const errorCode = codes.errors;
 
 module.exports = function(passport, models) {
 
@@ -35,7 +39,7 @@ module.exports = function(passport, models) {
     function(req, accessToken, refreshToken, profile, done) {
         process.nextTick(function() {
             const nameArr = profile.displayName.split(' ');
-            if (nameArr.length >= 2) {
+            if(nameArr.length >= 2){
                 fname = nameArr[0];
                 lname = nameArr[nameArr.length - 1];
             } else {
@@ -46,38 +50,38 @@ module.exports = function(passport, models) {
                 email: profile.emails[0].value,
                 provider: 'google'
             }, defaults: {
-                email: profile.emails[0].value,
-                provider: 'google',
-                google_token: accessToken,
-                google_id: profile.id,
-                fname: fname,
-                lname: lname
-            }})
-            .spread((user, created) => {
-                if (!created && !user) {
-                    return done(null, false, {info: 'User with that email already exists'});
-                }
-                progress.findOrCreate({where: {
-                    user_id: user.id
-                }, defaults: {
-                    user_id: user.id,
-                    stage: 0,
-                    activity: 0
+                    email: profile.emails[0].value,
+                    provider: 'google',
+                    google_token: accessToken,
+                    google_id: profile.id,
+                    fname: fname,
+                    lname: lname
                 }})
-                .spread((status, created) => {
-                    const response = {email: user.email, name: user.name};
-                    return done(null, response);
+                .spread((user, created) => {
+                    if(!created && !user) {
+                        return done(null, false, {info: errorCode.PCE010.message, code: errorCode.PCE010.code});
+                    }
+                    progress.findOrCreate({where: {
+                        user_id: user.id
+                    }, defaults: {
+                            user_id: user.id,
+                            stage: 0,
+                            activity: 0
+                        }})
+                        .spread((status, created) => {
+                            const response = {email: user.email, name: user.name};
+                            return done(null, response);
+                        })
+                        .catch(function(err) {
+                            return done(err);
+                        })
                 })
                 .catch(function(err) {
                     return done(err);
                 });
-            })
-            .catch(function(err) {
-                return done(err);
-            });
         });
     }
-));
+    ));
 
     passport.use('local-login', new LocalStrategy({
         usernameField: 'email',
@@ -97,20 +101,17 @@ module.exports = function(passport, models) {
                 email: email
             }}, {raw: true})
                 .then(data => {
-                    if (!data) {
-                        return done(null, false, {info: 'Invalid email or password'});
+                    if(!data) {
+                        return done(null, false, {info: errorCode.PCE008.message, code: errorCode.PCE008.code});
                     }
-                    if (data.provider === 'google') {
-                        return done(null, false, {info: 'Please login with Google'});
+                    if(data.provider === 'google') {
+                        return done(null, false, {info: errorCode.PCE009.message, code: errorCode.PCE009.code});
                     }
-                    bcrypt.compare(password, data.password, function(err, response) {
-                        if (response) {
-                            const response = { email: data.email, name: data.name};
-                            return done(null, response);
-                        } else {
-                            return done(null, false, {info: 'Invalid password'});
-                        }
-                    });
+                    if(data.password !== password) {
+                        return done(null, false, {info: errorCode.PCE005.message, code: errorCode.PCE005.code});
+                    }
+                    const response = { email: data.email, name: data.name};
+                    return done(null, response);
                 })
                 .catch(function(err) {
                     return done(err);

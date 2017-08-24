@@ -4,7 +4,6 @@ const router = express.Router();
 const models = require('../database/models');
 const localUser = models.user_account;
 const verification = models.verification;
-
 router.get('/', function(req, res) {
     const email = req.query.user;
     const token = req.query.token;
@@ -19,8 +18,9 @@ router.get('/', function(req, res) {
                     user_id: data.dataValues.id
                 }
             }).then(data => {
-                if (!data) {
+                if(!data) {
                     res.redirect('/login?msg=couldn\'t Verify');
+                    //return res.status(200).json({info: 'Couldn\'t Verify'});
                 }
                 localUser.update({
                     verificationStatus: true
@@ -30,9 +30,10 @@ router.get('/', function(req, res) {
                     }
                 }).then(task => {
                     res.redirect('/login?msg=Verified Successfully! You can now login');
+                    //return res.json({info: 'Verified Successfully! You can now login'});
                 })
                 .catch(error => {
-                    if (error) {
+                    if(error) {
                         res.redirect('/login?msg=couldn\'t Verify');
                     }
                 });

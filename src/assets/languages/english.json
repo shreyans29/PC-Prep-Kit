@@ -1,10 +1,6 @@
 {
   "pcprepkit": {
     "registration": {
-      "headings": {
-        "titleLeft": "PC Prep",
-        "titleRight": "Kit"
-      },
       "messages": {
         "heading": "Sign Up",
         "buttonMessage": "Sign Up"
@@ -21,6 +17,48 @@
         "email": "Email",
         "password": "Password",
         "confirmPassword": "Confirm Password"
+      }
+    },
+
+    "forgotPassword": {
+      "messages": {
+        "heading": "Reset",
+        "buttonMessage": "Reset"
+      },
+      "placeHolders": {
+        "email": "Email"
+      }
+    },
+
+    "resetPassword": {
+      "messages": {
+        "heading": "Reset Password",
+        "buttonMessage": "Reset Password"
+      },
+      "placeHolders": {
+        "password": "New password",
+        "confirmPassword": "Confirm password"
+      }
+    },
+
+    "login": {
+      "descriptions": {
+        "bodyContent1": "Be a prepared volunteer.",
+        "bodyContent2": "Build your knowledge of personal malaria",
+        "bodyContent3": "prevention for when you are out in the field.",
+        "bodyContent4": "Built by Peace Corps Volunteers for",
+        "bodyContent5": "Peace Corps Volunteers."
+       },
+      "placeHolders": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "messages": {
+        "login": "Login",
+        "googleSignin": "Sign in with Google",
+        "needAccount": "Need an account?",
+        "forgotPassword": "Forgot password?",
+        "signUp": "Signup"
       }
     },
 
@@ -51,10 +89,18 @@
         "descriptions": {
           "bodyContent": "Brought to you by"
         }
+      },
+      "alerts": {
+        "activitySuccessTitle": "Good job!",
+        "activitySuccessMsg": "You completed this activity!",
+        "activityFailTitle": "Oops!",
+        "activityFailMsg": "That is incorrect, please try again!"
       }
     },
-
     "stages": {
+      "menu": {
+        "heading": "Main Menu"
+      },
       "introduction": {
         "heading": "Introduction",
         "activityintro": {
@@ -66,6 +112,32 @@
           },
           "messages": {
             "nextButton": "Cool, next"
+          }
+        },
+        "highlightActivity": {
+          "headings": {
+            "question": "Q: What is Malaria?"
+          },
+          "descriptions": {
+            "bodyContent1": "ma.lar.i.a",
+            "bodyContent2": "noun",
+            "bodyContent3": "An intermittent and remittent fever caused by a protozoan parasite that invades the red blood cells. The parasite is transmitted by mosquitoes in many tropical and subtropical regions."
+          },
+          "alerts": {
+            "info": "Highlight the definition of malaria to complete this activity"
+          }
+        },
+        "picturePuzzle": {
+          "descriptions": {
+            "bodyContent": "Take a picture of yourself, someone or something important to you"
+           },
+          "messages": {
+            "capture": "Capture",
+            "afterCapture": "Take another photo",
+            "takePhoto": "Take Photo",
+            "shuffle": "Shuffle",
+            "browseButton": "Choose Existing",
+            "setProPicButton": "Set as profile picture"
           }
         },
         "pcpolicy": {
@@ -82,18 +154,91 @@
       },
       "malaria101": {
         "heading": "Malaria 101",
+        "lifecycle": {
+          "heading": "Watch the malaria transmission lifecycle & complete the follow up activity",
+          "labels": [
+                      "Plasmodium / Virus",
+                      "First infected mosquito",
+                      "First infected person",
+                      "Infected red blood cells",
+                      "Second infected mosquito",
+                      "Second infected person"
+                    ],
+          "alerts": {
+            "info": "Drag and drop the images in the container to complete the life cycle"
+          }
+        },
         "dragdrop": {
+          "heading": "Drag and drop the dos and donts of Malaria",
           "descriptions": {
             "boxIndicatorDo": "Dos",
             "boxIndicatorDont": "Don'ts",
             "boxIndicatorAvailable": "Available to drag"
           }
+        },
+        "oddOneOut": {
+          "heading": "Complete the odd one out quiz on Malaria",
+          "descriptions": {
+            "score": "Score!",
+            "resultText1": "You got",
+            "resultText2": "out of 5 questions right."
+          },
+          "messages": {
+            "resetButton": "Retry"
+          },
+          "alerts": {
+            "title": "Answers"
+          }
         }
       },
       "medsNLabels": {
-        "doctorChat": {
-          "heading": "Chat With Doctor",
-          "introMessage": "Hi, I am a doctor, if you need any help related to malaria, feel free to talk to me" 
+        "heading": "Medication & Labels",
+        "matchMeds": {
+        "headingSideeffects": "Match the medicines with their right side-effects",
+        "headingDescription": "Match the medicines with their right description"
+        },
+        "memoryGame": {
+          "heading": "Complete the memory game to unlock tips on diagnosis of malaria",
+          "alerts": {
+            "title": "Congratulations!<br>You matched a pair"
+          }
+        }
+      },
+      "peaceCorps": {
+        "heading": "Peace Corps Policy"
+      },
+      "lockedStage": {
+        "heading": "Locked Stage",
+        "howtoplay": {
+          "heading": "Prevent the mosquito from transmitting the virus to the human",
+          "instructions": {
+            "title": "How to play?",
+            "ins1": "Select the inventory item",
+            "ins2": "Use the item to stop the mosquito"
+          },
+          "messages": {
+            "nextButton": "Cool, next"
+          }
+        },
+        "game": {
+          "legend": {
+            "human": "Human",
+            "mosquito": "Mosquito",
+            "inventory": "Inventory"
+          },
+          "alerts": {
+            "loss": {
+              "title": "Game over!",
+              "content": "The mosquito has transmitted malaria virus!"
+            },
+            "win": {
+              "title": "Good job!",
+              "content": "You completed this activity!"
+            }
+          },
+          "messages": {
+            "restartButton": "Restart"
+          }
         }
       }
     }

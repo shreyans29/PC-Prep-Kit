@@ -95,7 +95,8 @@ export class DragdropComponent implements OnInit {
         this._infokitService.activateinfokit('do_dont').subscribe(res => {});
     }
 
-    constructor(private _dashboardService: DashboardService, private _sharedData: SharedDataService, private _infokitService: InfokitService, public toastr: ToastsManager, vcr: ViewContainerRef, private _langService: LanguageService) {
+    constructor(private _dashboardService: DashboardService, private _sharedData: SharedDataService, private _infokitService: InfokitService, public toastr: ToastsManager, vcr: ViewContainerRef,
+      private _langService: LanguageService) {
         this.toastr.setRootViewContainerRef(vcr);
         this._dashboardService.getProgressStatus().subscribe(response => {
             this.completed = this._sharedData.checkProgress(2, 2, response);
